@@ -87,10 +87,11 @@ impl<T> Table<T> {
                 values_already_here.push((v,r));
             }
         }
-        self.size = 2*self.size;
-        for _ in 0..self.size {
-            self.containers.push(RwLock::new(Container::Empty));
-        }
+        //self.size = 2*self.size;
+        //for _ in 0..self.size {
+        //    self.containers.push(RwLock::new(Container::Empty));
+        //}
+        *self = Table::new(2*self.size);
         for (v,r) in values_already_here {
             self.add(v, r);
         }
