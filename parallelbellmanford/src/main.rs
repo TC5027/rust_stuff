@@ -78,7 +78,6 @@ impl<'graph> Iterator for Predecessors<'graph> {
 impl Graph {
     // return true if a negative cycle is detected.
     pub fn parallel_bellman_ford(&self) -> (Vec<i8>, bool) {
-        // version la plus aboutie, pas besoin de RwLock en fait mdr
         let mut best_distance : Vec<i8> = (0..self.nodes.len())
                                         .map(|i| if i!=0 {std::i8::MAX} else {0})
                                         .collect();
@@ -94,8 +93,6 @@ impl Graph {
                     }
                     (i, new_at_index_i)
                     //pas sur qu'il y ait vraiment besoin de spécifier l'indice
-                    //ya moyen que ça retourne bien dans l'ordre et qu'on ait pas à se faire ***** du coup
-                    //mdr
                 }).collect();
             for (index, value_at_index) in new_best_distance {
                 best_distance[index] = value_at_index;
