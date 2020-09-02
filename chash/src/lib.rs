@@ -41,7 +41,8 @@ impl<T> Table<T> {
         self.size
     }
 
-    fn add(&self, value: T, repeatitions: usize) 
+    /// returns true if a Container previously empty is used, false if the value was already there
+    fn add(&self, value: T, repeatitions: usize) -> bool
         where T: Hash + PartialEq
     {
         let mut hasher = self.hasher.build_hasher();
@@ -51,10 +52,10 @@ impl<T> Table<T> {
             let mut chosen = self.containers[hash].write().unwrap();
             match &*chosen {
                 Container::ElemRepeat(v,r) => {
-                    if v==&value {*chosen = Container::ElemRepeat(value,r+repeatitions); break;}
+                    if v==&value {*chosen = Container::ElemRepeat(value,r+repeatitions); return false;}
                     else {hash = (hash+1)%self.size;}
                 },
-                Container::Empty => {*chosen = Container::ElemRepeat(value, repeatitions); break;},
+                Container::Empty => {*chosen = Container::ElemRepeat(value, repeatitions); return true;},
             }
         }
     }
@@ -87,10 +88,6 @@ impl<T> Table<T> {
                 values_already_here.push((v,r));
             }
         }
-        //self.size = 2*self.size;
-        //for _ in 0..self.size {
-        //    self.containers.push(RwLock::new(Container::Empty));
-        //}
         *self = Table::new(2*self.size);
         for (v,r) in values_already_here {
             self.add(v, r);
@@ -118,6 +115,7 @@ impl<T> Table<T> {
     }
 }
 
+#[derive(Debug)]
 pub struct CHash<T> {
     table: RwLock<Table<T>>,
     remaining: AtomicUsize,
@@ -137,8 +135,9 @@ impl<T> CHash<T> {
             self.bigger();
         }
         let table = self.table.read().unwrap();
-        table.add(value,1);
-        self.remaining.fetch_sub(1, Ordering::SeqCst);
+        if table.add(value,1) {
+            self.remaining.fetch_sub(1, Ordering::SeqCst);
+        }
     }
 
     fn bigger(&self) 
@@ -315,8 +314,8 @@ mod tests {
         h1.join();
         h2.join();
 
+        println!("{:?}",ch);
         assert!(ch.contains(1));
         assert!(ch.contains(14));
-        assert_eq!(ch.size(), 32);
     }
 }
