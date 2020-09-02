@@ -1,4 +1,6 @@
 // inspired by chashmap : https://docs.rs/chashmap/2.2.2/chashmap/
+
+// une suite pourrait etre de faire la même chose avec une valeur de répétitions max autorisées pour Container
 use std::hash::{Hash, Hasher, BuildHasher};
 use std::sync::RwLock;
 use std::collections::hash_map::RandomState;
@@ -131,7 +133,7 @@ impl<T> CHash<T> {
     pub fn add(&self, value: T) 
         where T: Hash + PartialEq
     {
-        if self.remaining.load(Ordering::SeqCst) < 2 {
+        if self.remaining.load(Ordering::SeqCst) <= 2 {
             self.bigger();
         }
         let table = self.table.read().unwrap();
@@ -317,5 +319,20 @@ mod tests {
         println!("{:?}",ch);
         assert!(ch.contains(1));
         assert!(ch.contains(14));
+    }
+
+    #[test]
+    fn chash_size() {
+        let ch = CHash::new();
+        assert_eq!(ch.size(),4);
+        ch.add(0);
+        ch.add(1);
+        assert_eq!(ch.size(),4);
+        ch.add(2);
+        assert_eq!(ch.size(),8);
+        for _ in 0..1000 {
+            ch.add(0);
+        }
+        assert_eq!(ch.size(),8);
     }
 }
