@@ -74,19 +74,16 @@ pub extern "C" fn boruvka(c_array: *mut i32, length: usize, size: usize, size_gl
         
         // organize the edges to preserve order so that next iteration 
         // we can re-use the "par_chunks(composants-1)" for found
-        let organize_by_component = (0..composants).into_par_iter()
-                .map(|k| {
-                    not_within_same.iter()
-                    .filter(|(i,_,_)| concordance[&pred[&i]] == k)
-                    .collect::<Vec<_>>()
-                })
-                .collect::<Vec<_>>();
+        let mut organize_by_component : Vec<Vec<(usize, usize, i32)>> = vec![Vec::with_capacity(not_within_same.len()/composants);composants];
+        for (i, j, w_ij) in not_within_same {
+            organize_by_component[concordance[&pred[&i]]].push((i,j,w_ij));
+        }
         
         // we remove the multi-edges between the different components
         // meaning we don't want to have more than 1 edge between 2 distinct components
         edges = (0..composants).into_par_iter().map(|k| {
             let mut minis = vec![(0,0,std::i32::MAX);composants];
-            for &(i,j,w_ij) in organize_by_component[k].clone() {
+            for (i,j,w_ij) in organize_by_component[k].clone() {
                 let composant = concordance[&pred[&j]];
                 if minis[composant].2 > w_ij {
                     minis[composant] = (i,j,w_ij);

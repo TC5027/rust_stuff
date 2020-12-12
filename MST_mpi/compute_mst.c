@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
 	MPI_Comm_size(MPI_COMM_WORLD, &size);
 	if (rank == 0) {
 		combined_MST = (int *)malloc(size*2*(s-1)*sizeof(int));
-		//int combined_MST[3*(2*(s-1))];
+
 		graph = (int **)malloc(N*sizeof(int *));
 		for (int i=0; i<N; i++)
 			graph[i] = (int *)malloc((N-1)*sizeof(int));
@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
 		graph[3][0] = 4;graph[3][1] = 4;graph[3][2] = 0;graph[3][3] = 3;graph[3][4] = 4;
 		graph[4][0] = 4;graph[4][1] = 4;graph[4][2] = 4;graph[4][3] = 3;graph[4][4] = 0;
 		graph[5][0] = 1;graph[5][1] = 4;graph[5][2] = 4;graph[5][3] = 4;graph[5][4] = 0;
-		//int graph[6][5] = {{0,4,4,4,1},{0,2,4,4,4},{4,2,0,4,4},{4,4,0,3,4},{4,4,4,3,0},{1,4,4,4,0}}; 
+
 		for (int k = 1; k<size; k++) {
 			for (int i = 0; i<s; i++) {
 				for (int j = 0; j<s-1; j++){
