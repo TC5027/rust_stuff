@@ -11,7 +11,6 @@ type Shorter = Arc<Mutex<VecDeque<Task>>>;
 thread_local!(static LOCAL_DEQUE : RefCell<Shorter>
     = RefCell::new(Arc::new(Mutex::new(VecDeque::new()))));
 
-// atomic duration serait bien pratique...
 pub struct Task {
     index : u8,
     boxed_t : Box<dyn FnOnce() + Send + 'static>,
@@ -37,7 +36,11 @@ impl Task {
         println!("{:?}",self.index);
         f();
         let duration = start.elapsed();
+        // we add to timer the ACCUMULATED time of execution, timer helps us
+        // characterize LARGE tasks or not
         *self.timer.lock().unwrap() += duration;
+        // we update duration as the time since the task has been declared and is so
+        // waiting to be completed (possibly in less than the target latency)
         *self.duration.lock().unwrap() = self.start.elapsed();
     }
 
@@ -54,10 +57,12 @@ fn schedule(local_deque : Shorter, other_deques : Vec<Shorter>, global_queue : A
     let mut rng = rand::thread_rng();
     loop {
         if local_deque.lock().unwrap().is_empty() {
+            // the thread's tasks are not unstealable anymore (if it was the case)
             declared_unstealable.lock().unwrap().retain(|&i| i!= index_of_thread);
             active_tasks.fetch_sub(1,Ordering::Relaxed);
 
             let mut steal_index = rng.gen_range(0..other_deques.len());
+            // we loop while the victim thread contains unstealable task
             while declared_unstealable.lock().unwrap().contains(&get_index_of_thread(index_of_thread, steal_index)) {
                 steal_index = rng.gen_range(0..other_deques.len());
             }
@@ -65,11 +70,13 @@ fn schedule(local_deque : Shorter, other_deques : Vec<Shorter>, global_queue : A
             let stealed_task = other_deques[steal_index].lock().unwrap().pop_back();
             match stealed_task {
                 Some(f) => {
-                    // THIS IS WERE WE DECLARE THAT TARGET LATENCY IS OF 4 
+                    // this is where we declare the target latency
                     if f.is_stealable(Duration::from_secs(4)) {
                         f.execute();
                     } else {
+                        // we set the victim thread's tasks as unstealable
                         declared_unstealable.lock().unwrap().push(get_index_of_thread(index_of_thread, steal_index));
+                        // we add back the task
                         other_deques[steal_index].lock().unwrap().push_back(f);
                     }},
                 None => {
@@ -128,7 +135,7 @@ impl Threadpool {
             }
             storing.reverse();
             deques = storing;
-            // on peut faire plus malin en faisant direct deques = storing et en regardant selon si i pair ou non
+            // we could be more efficient looking at parity of i.
             thread::spawn(move || {
                 LOCAL_DEQUE.with( |deque| {
                     *deque.borrow_mut() = local_deque.clone();
@@ -175,7 +182,11 @@ fn example_of_use() {
     std::thread::sleep(Duration::from_millis(1));
     threadpool.forall(0..2, |_| {std::thread::sleep(Duration::from_secs(1))});
     std::thread::sleep(Duration::from_secs(10));
-    println!("with a target latency of 4 secs, and a policy which serializes if the operation took more than 4 secs (accumulated) we get :\n{:?}\nso the operation 0 missed target latency but operation 1 succeed to hit it, thanks to the serialization of operation 0", threadpool.durations);
+    println!("with a target latency of 4 secs, and a policy which serializes 
+    if the operation took more than 4 secs (accumulated) we get :\n{:?}\nso 
+    the operation 0 missed target latency but operation 1 succeed to hit it, 
+    thanks to the serialization of operation 0, without hit both would
+     have missed", threadpool.durations);
 }
 
 fn main() {
