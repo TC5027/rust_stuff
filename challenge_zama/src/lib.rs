@@ -30,6 +30,28 @@ impl<T> Matrix<T>  {
             nb_row : nb_row
         }
     }
+
+    /// Flatten a Matrix object, meaning the Matrix will have nb_row = 1
+    pub fn flatten(&mut self) {
+        self.nb_col *= self.nb_row;
+        self.nb_row = 1;
+    }
+}
+
+impl Matrix<f64> {
+
+    pub fn tanh(&mut self) {
+        self.data = self.data.iter().map(|&x| x.tanh()).collect();
+    }
+
+    pub fn relu(&mut self) {
+        self.data = self.data.iter().map(|&x| x.max(0.0)).collect();
+    }
+
+    pub fn softmax(&mut self) {
+        let sum : f64 = self.data.iter().sum();
+        self.data = self.data.iter().map(|&x| x/sum).collect();
+    }
 }
 
 /// Convolution operator
@@ -54,6 +76,21 @@ pub fn convolution<T>(matrix : Matrix<T>, kernel : Matrix<T>) -> Matrix<T>
     Matrix::new(nb_col, nb_row, data)
 }
 
+/// Linear combination
+pub fn linear_combination<T>(one_dim : Matrix<T>, weights : Matrix<T>, bias : Matrix<T>) -> Matrix<T>
+    where T : PartialEq + Add<Output=T> + Mul<Output=T> + Sum + Copy
+{
+    // asserts ?
+    let data : Vec<T> = (0..weights.nb_col).map(|j| {
+        one_dim.data.iter()
+            .enumerate()
+            .map(|(index,&x)| x*weights.data[index*weights.nb_col+j])
+            .sum::<T>() + bias.data[j]
+    }).collect();
+
+    Matrix::new(weights.nb_col,1,data)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -76,6 +113,17 @@ mod tests {
 
         let expected_output = Matrix::new(5,5,vec![1,4,3,4,1,1,2,4,3,3,1,2,3,4,1,1,3,3,1,1,3,3,1,1,0]);
 
-        assert_eq!(expected_output,convolution(matrix,kernel));
+        assert_eq!(convolution(matrix,kernel), expected_output);
+    }
+
+    #[test]
+    fn test_linear_combination() {
+        let one_dim = Matrix::new(3,1,vec![3,4,2]);
+        let weights = Matrix::new(4,3,vec![13,9,7,15,8,7,4,6,6,4,0,3]);
+        let bias = Matrix::new(4,1,vec![1,1,1,1]);
+
+        let expected_output = Matrix::new(4,1,vec![84,64,38,76]);
+
+        assert_eq!(linear_combination(one_dim, weights, bias), expected_output);
     }
 }
