@@ -7,9 +7,9 @@ use std::iter::Sum;
 /// (with i and j starting at 0)
 #[derive(PartialEq,Debug)]
 pub struct Matrix<T> {
-    data : Vec<T>,
-    nb_col : usize,
-    nb_row : usize
+    pub data : Vec<T>,
+    pub nb_col : usize,
+    pub nb_row : usize
 }
 
 impl<T> Matrix<T>  {
@@ -49,8 +49,8 @@ impl Matrix<f64> {
     }
 
     pub fn softmax(&mut self) {
-        let sum : f64 = self.data.iter().sum();
-        self.data = self.data.iter().map(|&x| x/sum).collect();
+        let sum : f64 = self.data.iter().map(|&x| x.exp()).sum();
+        self.data = self.data.iter().map(|&x| x.exp()/sum).collect();
     }
 }
 
