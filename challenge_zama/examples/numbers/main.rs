@@ -21,17 +21,29 @@ fn custom_print(number : &[f64;784]) {
 }
 
 fn main() {
-    for number in DATASET[45..].iter().take(1) {
+    for number in DATASET.iter().take(10) {
         println!("number seen : ");
         custom_print(&number);
 
-        let mut matrix = Matrix::new(28,28,number.iter().map(|&x| x));
+        let mut weight_1 = Matrix::new(28*28,256,&WEIGHT_1);
+        weight_1.transpose();
+        let bias_1 = Matrix::new(256,1,&BIAS_1);
+
+        let mut weight_2 = Matrix::new(256,32,&WEIGHT_2);
+        weight_2.transpose();
+        let bias_2 = Matrix::new(32,1,&BIAS_2);
+
+        let mut weight_3 = Matrix::new(32,10,&WEIGHT_3);
+        weight_3.transpose();
+        let bias_3 = Matrix::new(10,1,&BIAS_3);
+
+        let mut matrix = Matrix::new(28,28,number);
         matrix.flatten();
-        matrix = linear_combination(matrix,Matrix::new(256,28*28,WEIGHT_1.iter().map(|&x| x)),Matrix::new(256,1,BIAS_1.iter().map(|&x| x)));
+        matrix.linear_combination(weight_1,bias_1);
         matrix.relu();
-        matrix = linear_combination(matrix,Matrix::new(32,256,WEIGHT_2.iter().map(|&x| x)),Matrix::new(32,1,BIAS_2.iter().map(|&x| x)));
+        matrix.linear_combination(weight_2,bias_2);
         matrix.relu();
-        matrix = linear_combination(matrix,Matrix::new(10,32,WEIGHT_3.iter().map(|&x| x)),Matrix::new(10,1,BIAS_3.iter().map(|&x| x)));
+        matrix.linear_combination(weight_3,bias_3);
         matrix.softmax();
 
         let mut index = 0; let mut maxi = matrix.data[0];
