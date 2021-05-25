@@ -8,3 +8,9 @@ edition = "2018"
 
 [dependencies]
 rand = "0.8.0"
+rayon = "1.5.0"
+criterion = "0.3"
+
+[[bench]]
+name = "impact_rayon"
+harness = false

@@ -21,7 +21,7 @@ fn custom_print(number: &[f64; 784]) {
 }
 
 fn main() {
-    for number in DATASET.iter().take(10) {
+    for number in DATASET.iter().take(5) {
         println!("number seen : ");
         custom_print(&number);
 

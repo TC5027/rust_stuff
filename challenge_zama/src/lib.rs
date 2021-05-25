@@ -1,6 +1,8 @@
 use std::iter::Sum;
 use std::ops::{Add, Mul};
 
+mod advanced;
+
 /// Matrix object, defined as a contiguous sequence of data
 /// correclty interpreted with the nb_col and nb_row fields.
 /// Accessing matrix[i,j] can be done looking at data[i*nb_col+j]
