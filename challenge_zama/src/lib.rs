@@ -118,18 +118,18 @@ impl<T: Copy + Add<Output = T> + Mul<Output = T> + Sum> Matrix<T> {
 impl Matrix<f64> {
     /// Apply hyperbolic tangent on Matrix's data
     pub fn tanh(&mut self) {
-        self.data = self.data.iter().map(|&x| x.tanh()).collect();
+        self.data.iter_mut().for_each(|x| *x = x.tanh());
     }
 
     /// Apply RELU on Matrix's data
     pub fn relu(&mut self) {
-        self.data = self.data.iter().map(|&x| x.max(0.0)).collect();
+        self.data.iter_mut().for_each(|x| *x = x.max(0.0));
     }
 
     /// Apply softmax on Matrix's data
     pub fn softmax(&mut self) {
         let sum: f64 = self.data.iter().map(|&x| x.exp()).sum();
-        self.data = self.data.iter().map(|&x| x.exp() / sum).collect();
+        self.data.iter_mut().for_each(|x| *x = x.exp() / sum);
     }
 }
 
