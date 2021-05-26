@@ -58,7 +58,7 @@ impl<T: Copy> Matrix<T> {
 impl<T: Copy + Add<Output = T> + Mul<Output = T> + Sum> Matrix<T> {
     /// Convolution by a kernel which is represented as
     /// another Matrix object, without strides and padding.
-    pub fn convolution(&mut self, kernel: Matrix<T>) {
+    pub fn convolution(&mut self, kernel: &Matrix<T>) {
         assert!(self.nb_col >= kernel.nb_col && self.nb_row >= kernel.nb_row);
         // we remember the previous number of columns
         // of self, to navigate correctly inside its
@@ -90,7 +90,7 @@ impl<T: Copy + Add<Output = T> + Mul<Output = T> + Sum> Matrix<T> {
 
     /// Linear combination by a weight (Matrix object) and
     /// a bias (flattened Matrix object) of a flattened self.
-    pub fn linear_combination(&mut self, weights: Matrix<T>, bias: Matrix<T>) {
+    pub fn linear_combination(&mut self, weights: &Matrix<T>, bias: &Matrix<T>) {
         // assert self and bias respect the dimension's
         // constraint of the method
         assert!(self.nb_row == 1 && bias.nb_row == 1);
@@ -156,7 +156,7 @@ mod tests {
             ],
         );
 
-        matrix.convolution(kernel);
+        matrix.convolution(&kernel);
 
         assert_eq!(matrix, expected_output);
     }
@@ -169,7 +169,7 @@ mod tests {
 
         let expected_output = Matrix::new(4, 1, &vec![84, 64, 38, 76]);
 
-        one_dim.linear_combination(weights, bias);
+        one_dim.linear_combination(&weights, &bias);
 
         assert_eq!(one_dim, expected_output);
 
@@ -179,7 +179,7 @@ mod tests {
 
         let expected_output = Matrix::new(3, 1, &vec![10, 10, 10]);
 
-        one_dim.linear_combination(weights, bias);
+        one_dim.linear_combination(&weights, &bias);
 
         assert_eq!(one_dim, expected_output);
     }

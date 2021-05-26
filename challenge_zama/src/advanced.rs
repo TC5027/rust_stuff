@@ -5,7 +5,7 @@ use std::ops::{Add, Mul};
 use crate::Matrix;
 
 impl<T: Copy + Add<Output = T> + Mul<Output = T> + Sum + Send + Sync> Matrix<T> {
-    pub fn par_linear_combination(&mut self, weights: Matrix<T>, bias: Matrix<T>) {
+    pub fn par_linear_combination(&mut self, weights: &Matrix<T>, bias: &Matrix<T>) {
         assert!(self.nb_row == 1 && bias.nb_row == 1);
         assert!(self.nb_col == weights.nb_row && bias.nb_col == weights.nb_col);
 

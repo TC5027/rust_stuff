@@ -39,11 +39,11 @@ fn main() {
 
         let mut matrix = Matrix::new(28, 28, number);
         matrix.flatten();
-        matrix.linear_combination(weight_1, bias_1);
+        matrix.linear_combination(&weight_1, &bias_1);
         matrix.relu();
-        matrix.linear_combination(weight_2, bias_2);
+        matrix.linear_combination(&weight_2, &bias_2);
         matrix.relu();
-        matrix.linear_combination(weight_3, bias_3);
+        matrix.linear_combination(&weight_3, &bias_3);
         matrix.softmax();
 
         let mut index = 0;
