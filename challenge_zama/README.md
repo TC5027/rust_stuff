@@ -16,5 +16,5 @@ To run the benchmark :
 ```
 cargo bench
 ```
-The reports created by criterion are located in ```target/criterion/report/index.html```
+The reports created by criterion are located in [target/criterion/report/index.html]
 
