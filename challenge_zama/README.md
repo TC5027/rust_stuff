@@ -27,11 +27,23 @@ Creating a Matrix is made through the ```new``` method. It takes as input :
 * the data, represented flatten by rows
 
 Suppose we want to create the following matrix : 
-$\begin{pmatrix} 1 & 2 & 3\\ 4 & 5 & 6 \end{pmatrix}$
+
+|1 2 3|
+|4 5 6|
 
 ```rust
 let matrix = Matrix::new(3,2,&vec![1,2,3,4,5,6]);
 ```
+(if the matrix is given by columns we can use ```transpose```)
 
-If the matrix is given by columns we can use ```transpose```
+The library offers several functions used by neural networks like convolution, relu, softmax and more, which can be applied on Matrix instances :
 
+```rust
+let mut matrix = Matrix::new(3,3,&vec![1,2,3,4,5,6,7,8,9]);
+
+let kernel = Matrix::new(2,2,&vec![1,1,1,1]);
+
+matrix.convolution(&kernel);
+
+matrix.relu();
+```
