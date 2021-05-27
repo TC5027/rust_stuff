@@ -27,12 +27,12 @@ Creating a Matrix is made through the ```new``` method. It takes as input :
 * the data, represented flatten by rows
 
 Suppose we want to create the following matrix : 
-$$\begin{array}{ccc}
+$\begin{pmatrix}
 1 & 2 & 3\\
 4 & 5 & 6
-\end{array}$$
+\end{pmatrix}$
 
-```{rust}
+```rust
 let matrix = Matrix::new(3,2,&vec![1,2,3,4,5,6]);
 ```
 
