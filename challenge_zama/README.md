@@ -36,7 +36,7 @@ let matrix = Matrix::new(3,2,&vec![1,2,3,4,5,6]);
 ```
 (if the matrix is given by columns we can use ```transpose```)
 
-The library offers several functions used by neural networks like convolution, relu, softmax and more, which can be applied on Matrix instances :
+The library offers several functions used by neural networks like ```convolution```, ```relu```, ```softmax``` and more, which can be applied on Matrix instances :
 
 ```rust
 let mut matrix = Matrix::new(3,3,&vec![1,2,3,4,5,6,7,8,9]);
