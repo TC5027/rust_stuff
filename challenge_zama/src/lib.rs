@@ -19,10 +19,10 @@ impl<T: Copy> Matrix<T> {
     /// nb_col and nb_row are expected to be > 0 and data length
     /// must be equal to nb_col and nb_row.
     pub fn new(nb_col: usize, nb_row: usize, data: &[T]) -> Self {
-        let data: Vec<T> = data.iter().copied().collect();
-
         assert_eq!(nb_col * nb_row, data.len());
         assert!(nb_col > 0 && nb_row > 0);
+
+        let data: Vec<T> = data.iter().copied().collect();
 
         Matrix {
             data,
