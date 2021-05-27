@@ -28,7 +28,7 @@ Creating a Matrix is made through the ```new``` method. It takes as input :
 
 Suppose we want to create the following matrix : 
 
-|1 2 3| \\
+|1 2 3|   
 |4 5 6|
 
 ```rust
