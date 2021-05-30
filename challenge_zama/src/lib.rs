@@ -31,10 +31,8 @@ impl<T: Copy> Matrix<T> {
         }
     }
 
-    /// Flatten a Matrix object, meaning the Matrix will have nb_row = 1
+    /// Flatten a Matrix object, meaning the Matrix will have nb_col = 1
     pub fn flatten(&mut self) {
-        // self.nb_col *= self.nb_row;
-        // self.nb_row = 1;
         self.nb_row *= self.nb_col;
         self.nb_col = 1;
     }
@@ -170,6 +168,15 @@ mod tests {
         let bias = Matrix::new(1, 2, &vec![-1, -2]);
 
         let expected_output = Matrix::new(1, 2, &vec![5, 13]);
+
+        one_dim.linear_combination(&weights, &bias);
+        assert_eq!(one_dim, expected_output);
+
+        let mut one_dim = Matrix::new(1, 1, &vec![1]);
+        let weights = Matrix::new(1, 1, &vec![2]);
+        let bias = Matrix::new(1, 1, &vec![1]);
+
+        let expected_output = Matrix::new(1, 1, &vec![3]);
 
         one_dim.linear_combination(&weights, &bias);
         assert_eq!(one_dim, expected_output);
