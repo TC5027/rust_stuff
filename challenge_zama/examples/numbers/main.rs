@@ -25,17 +25,14 @@ fn main() {
         println!("number seen : ");
         custom_print(&number);
 
-        let mut weight_1 = Matrix::new(28 * 28, 256, &WEIGHT_1);
-        weight_1.transpose();
-        let bias_1 = Matrix::new(256, 1, &BIAS_1);
+        let weight_1 = Matrix::new(28 * 28, 256, &WEIGHT_1);
+        let bias_1 = Matrix::new(1, 256, &BIAS_1);
 
-        let mut weight_2 = Matrix::new(256, 32, &WEIGHT_2);
-        weight_2.transpose();
-        let bias_2 = Matrix::new(32, 1, &BIAS_2);
+        let weight_2 = Matrix::new(256, 32, &WEIGHT_2);
+        let bias_2 = Matrix::new(1, 32, &BIAS_2);
 
-        let mut weight_3 = Matrix::new(32, 10, &WEIGHT_3);
-        weight_3.transpose();
-        let bias_3 = Matrix::new(10, 1, &BIAS_3);
+        let weight_3 = Matrix::new(32, 10, &WEIGHT_3);
+        let bias_3 = Matrix::new(1, 10, &BIAS_3);
 
         let mut matrix = Matrix::new(28, 28, number);
         matrix.flatten();

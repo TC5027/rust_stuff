@@ -33,8 +33,10 @@ impl<T: Copy> Matrix<T> {
 
     /// Flatten a Matrix object, meaning the Matrix will have nb_row = 1
     pub fn flatten(&mut self) {
-        self.nb_col *= self.nb_row;
-        self.nb_row = 1;
+        // self.nb_col *= self.nb_row;
+        // self.nb_row = 1;
+        self.nb_row *= self.nb_col;
+        self.nb_col = 1;
     }
 
     /// Out of place transposition of a Matrix object
@@ -93,25 +95,25 @@ impl<T: Copy + Add<Output = T> + Mul<Output = T> + Sum> Matrix<T> {
     pub fn linear_combination(&mut self, weights: &Matrix<T>, bias: &Matrix<T>) {
         // assert self and bias respect the dimension's
         // constraint of the method
-        assert!(self.nb_row == 1 && bias.nb_row == 1);
+        assert!(self.nb_col == 1 && bias.nb_col == 1);
         // assert the weights' dimensions match the ones of
         // self and bias
-        assert!(self.nb_col == weights.nb_row && bias.nb_col == weights.nb_col);
+        assert!(self.nb_row == weights.nb_col && bias.nb_row == weights.nb_row);
 
-        self.data = (0..weights.nb_col)
-            .map(|j| {
+        self.data = (0..weights.nb_row)
+            .map(|i| {
                 // we go through each position of the result
                 // matrix one by one and compute its value
                 self.data
                     .iter()
                     .enumerate()
-                    .map(|(index, &x)| x * weights.data[index * weights.nb_col + j])
+                    .map(|(index, &x)| x * weights.data[i * weights.nb_col + index])
                     .sum::<T>()
-                    + bias.data[j]
+                    + bias.data[i]
             })
             .collect();
 
-        self.nb_col = bias.nb_col;
+        self.nb_row = bias.nb_row;
     }
 }
 
@@ -163,24 +165,13 @@ mod tests {
 
     #[test]
     fn test_linear_combination() {
-        let mut one_dim = Matrix::new(3, 1, &vec![3, 4, 2]);
-        let weights = Matrix::new(4, 3, &vec![13, 9, 7, 15, 8, 7, 4, 6, 6, 4, 0, 3]);
-        let bias = Matrix::new(4, 1, &vec![1, 1, 1, 1]);
+        let mut one_dim = Matrix::new(1, 3, &vec![1, 1, 1]);
+        let weights = Matrix::new(3, 2, &vec![1, 2, 3, 4, 5, 6]);
+        let bias = Matrix::new(1, 2, &vec![-1, -2]);
 
-        let expected_output = Matrix::new(4, 1, &vec![84, 64, 38, 76]);
-
-        one_dim.linear_combination(&weights, &bias);
-
-        assert_eq!(one_dim, expected_output);
-
-        let mut one_dim = Matrix::new(3, 1, &vec![1, 2, 3]);
-        let weights = Matrix::new(3, 3, &vec![2, 1, 3, 3, 3, 2, 4, 1, 2]);
-        let bias = Matrix::new(3, 1, &vec![-10, 0, -3]);
-
-        let expected_output = Matrix::new(3, 1, &vec![10, 10, 10]);
+        let expected_output = Matrix::new(1, 2, &vec![5, 13]);
 
         one_dim.linear_combination(&weights, &bias);
-
         assert_eq!(one_dim, expected_output);
     }
 
