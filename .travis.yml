@@ -1,0 +1,8 @@
+language: rust
+rust:
+  - 1.44.1
+script:
+  - cd challenge_zama/
+  - cargo build
+  - cargo clippy
+  - cargo test
