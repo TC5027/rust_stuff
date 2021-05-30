@@ -1,5 +1,7 @@
 # Challenge - ZAMA - 24/05
 
+[![Build Status](https://travis-ci.com/TC5027/rust_stuff.svg?branch=master)](https://travis-ci.com/TC5027/rust_stuff)
+
 ## Commands
 
 To run the example : 
