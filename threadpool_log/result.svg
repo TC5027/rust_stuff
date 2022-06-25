@@ -1,0 +1,237 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="150" y="10" width="300" height="180" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="150" y="10" width="300" height="90" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="150" y="10" width="300" height="90" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="0ms"/>
+</rect>
+<rect x="150" y="10" width="300" height="90" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(190,188,213)" begin="4000ms"/>
+</rect>
+<rect x="150" y="10" width="300" height="90" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="6000ms"/>
+</rect>
+<rect x="10" y="210" width="137" height="180" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="228" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="246" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="264" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="282" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="300" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="318" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="336" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="354" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="372" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="10" y="228" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="10" y="246" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="10" y="264" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="10" y="282" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="10" y="300" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="10" y="318" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="10" y="336" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="10" y="354" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="10" y="372" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="10" y="372" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="0ms"/>
+</rect>
+<rect x="10" y="354" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="0ms"/>
+</rect>
+<rect x="10" y="336" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="0ms"/>
+</rect>
+<rect x="10" y="318" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="0ms"/>
+</rect>
+<rect x="10" y="300" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="3000ms"/>
+</rect>
+<rect x="10" y="282" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="3000ms"/>
+</rect>
+<rect x="10" y="264" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="3000ms"/>
+</rect>
+<rect x="10" y="246" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="3000ms"/>
+</rect>
+<rect x="10" y="228" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="6000ms"/>
+</rect>
+<rect x="10" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="9000ms"/>
+</rect>
+<rect x="157" y="210" width="137" height="180" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="228" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="246" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="264" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="282" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="300" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="318" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="336" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="354" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="372" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="157" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="0ms"/>
+</rect>
+<rect x="157" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="3000ms"/>
+</rect>
+<rect x="157" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="3000ms"/>
+</rect>
+<rect x="157" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(190,188,213)" begin="6000ms"/>
+</rect>
+<rect x="157" y="228" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(190,188,213)" begin="6000ms"/>
+</rect>
+<rect x="157" y="246" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(190,188,213)" begin="6000ms"/>
+</rect>
+<rect x="157" y="264" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(190,188,213)" begin="6000ms"/>
+</rect>
+<rect x="157" y="264" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="6000ms"/>
+</rect>
+<rect x="157" y="246" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="6000ms"/>
+</rect>
+<rect x="157" y="228" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="6000ms"/>
+</rect>
+<rect x="157" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="8000ms"/>
+</rect>
+<rect x="304" y="210" width="137" height="180" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="228" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="246" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="264" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="282" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="300" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="318" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="336" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="354" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="372" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="304" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="0ms"/>
+</rect>
+<rect x="304" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="3000ms"/>
+</rect>
+<rect x="304" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="3000ms"/>
+</rect>
+<rect x="304" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(190,188,213)" begin="6000ms"/>
+</rect>
+<rect x="304" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="6000ms"/>
+</rect>
+<rect x="451" y="210" width="137" height="180" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="228" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="246" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="264" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="282" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="300" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="318" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="336" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="354" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="372" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="0ms"/>
+</rect>
+<rect x="451" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="0ms"/>
+</rect>
+<rect x="451" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(82,139,117)" begin="3000ms"/>
+</rect>
+<rect x="451" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="3000ms"/>
+</rect>
+<rect x="451" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="rgb(190,188,213)" begin="6000ms"/>
+</rect>
+<rect x="451" y="210" width="137" height="18" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" values="white" begin="6000ms"/>
+</rect>
+<rect x="10" y="410" width="137" height="180" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="10" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(82,139,117)" to="white" dur="3000ms" begin="0ms"/>
+</rect>
+<rect x="10" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(82,139,117)" to="white" dur="3000ms" begin="3000ms"/>
+</rect>
+<rect x="10" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(82,139,117)" to="white" dur="3000ms" begin="6000ms"/>
+</rect>
+<rect x="10" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(82,139,117)" to="white" dur="3000ms" begin="9000ms"/>
+</rect>
+<rect x="157" y="410" width="137" height="180" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="157" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(82,139,117)" to="white" dur="3000ms" begin="0ms"/>
+</rect>
+<rect x="157" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(82,139,117)" to="white" dur="3000ms" begin="3000ms"/>
+</rect>
+<rect x="157" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(190,188,213)" to="white" dur="2000ms" begin="6000ms"/>
+</rect>
+<rect x="157" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(190,188,213)" to="white" dur="2000ms" begin="8000ms"/>
+</rect>
+<rect x="304" y="410" width="137" height="180" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="304" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(82,139,117)" to="white" dur="3000ms" begin="0ms"/>
+</rect>
+<rect x="304" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(82,139,117)" to="white" dur="3000ms" begin="3000ms"/>
+</rect>
+<rect x="304" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(190,188,213)" to="white" dur="2000ms" begin="6000ms"/>
+</rect>
+<rect x="451" y="410" width="137" height="180" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)"/>
+<rect x="451" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(82,139,117)" to="white" dur="3000ms" begin="0ms"/>
+</rect>
+<rect x="451" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(82,139,117)" to="white" dur="3000ms" begin="3000ms"/>
+</rect>
+<rect x="451" y="410" width="137" height="180" style="stroke-width:3;stroke:rgb(0,0,0)">
+<animate attributeType="XML" attributeName="fill" from="rgb(190,188,213)" to="white" dur="2000ms" begin="6000ms"/>
+</rect>
+</svg>
